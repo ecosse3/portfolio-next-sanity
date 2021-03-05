@@ -1,6 +1,7 @@
+import { TPost } from 'types/blog'
 import client, { previewClient } from './sanity'
 
-const getUniquePosts = (posts) => {
+const getUniquePosts = (posts: TPost[]) => {
   const slugs = new Set()
   return posts.filter((post) => {
     if (slugs.has(post.slug)) {
@@ -23,9 +24,9 @@ const postFields = `
   'author': author->{name, 'picture': image.asset->url},
 `
 
-const getClient = (preview) => (preview ? previewClient : client)
+const getClient = (preview: boolean) => (preview ? previewClient : client)
 
-export async function getPreviewPostBySlug(slug) {
+export async function getPreviewPostBySlug(slug: string) {
   const data = await getClient(true).fetch(
     `*[_type == "post" && slug.current == $slug] | order(publishedAt desc){
       ${postFields}
@@ -41,7 +42,7 @@ export async function getAllPostsWithSlug() {
   return data
 }
 
-export async function getAllPostsForHome(preview) {
+export async function getAllPostsForHome(preview: boolean) {
   const results = await getClient(preview)
     .fetch(`*[_type == "post"] | order(publishedAt desc){
       ${postFields}
@@ -49,7 +50,7 @@ export async function getAllPostsForHome(preview) {
   return getUniquePosts(results)
 }
 
-export async function getPostAndMorePosts(slug, preview) {
+export async function getPostAndMorePosts(slug: string, preview: boolean) {
   const curClient = getClient(preview)
   const [post, morePosts] = await Promise.all([
     curClient.fetch(
@@ -57,13 +58,13 @@ export async function getPostAndMorePosts(slug, preview) {
         ${postFields}
         body,
         'comments': *[
-                      _type == "comment" && 
-                      post._ref == ^._id && 
+                      _type == "comment" &&
+                      post._ref == ^._id &&
                       approved == true] {
-          _id, 
-          name, 
-          email, 
-          comment, 
+          _id,
+          name,
+          email,
+          comment,
           _createdAt
         }
       }`,

@@ -6,8 +6,15 @@ import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
+import { TPost } from 'types/blog'
+import { GetStaticProps } from 'next'
 
-export default function Index({ allPosts, preview }) {
+interface IProps {
+  allPosts: TPost[];
+  preview: boolean;
+}
+
+export default function Index({ allPosts, preview }: IProps) {
   const heroPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
@@ -35,8 +42,8 @@ export default function Index({ allPosts, preview }) {
   )
 }
 
-export async function getStaticProps({ preview = false }) {
-  const allPosts = await getAllPostsForHome(preview)
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+  const allPosts: TPost[] = await getAllPostsForHome(preview)
   return {
     props: { allPosts, preview },
     revalidate: 1
