@@ -1,3 +1,5 @@
+import { BlockContentProps } from "@sanity/block-content-to-react"
+
 type TCoverImage = {
   _type: string;
   asset: {
@@ -26,6 +28,8 @@ type TAuthor = {
 export type TPost = {
   _createdAt: Date;
   _updatedAt: Date;
+  _id: string;
+  body: BlockContentProps;
   publishedAt: Date;
   title: string;
   coverImage: TCoverImage;
