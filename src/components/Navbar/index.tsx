@@ -31,7 +31,7 @@ const Navbar = () => {
         <FlexContainer>
           <div style={{ cursor: 'pointer' }}>
             <Link href="/">
-              <Image src="/logo/slogan.svg" width={80} height={80} />
+              <Image src="/logo/slogan.png" width={80} height={80} />
             </Link>
           </div>
           <NavLinks style={linkAnimation}>
