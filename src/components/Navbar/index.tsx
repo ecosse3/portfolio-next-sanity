@@ -12,7 +12,6 @@ const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleNavbar = () => setNavbarOpen((state) => !state);
   const router = useRouter();
-  console.log('router', router);
 
   const barAnimation = useSpring({
     from: { transform: 'translate3d(0, -10rem, 0)' },

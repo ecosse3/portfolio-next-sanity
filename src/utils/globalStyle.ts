@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/Gilroy-Regular.woff') format('woff'),
          url('/fonts/Gilroy-Regular.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -13,6 +14,7 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/Gilroy-Medium.woff') format('woff'),
          url('/fonts/Gilroy-Medium.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -20,6 +22,7 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/Gilroy-Bold.woff') format('woff'),
          url('/fonts/Gilroy-Bold.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -27,6 +30,7 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/Gilroy-Bold.woff') format('woff'),
          url('/fonts/Gilroy-Bold.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -34,12 +38,14 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/Gilroy-Heavy.woff') format('woff'),
          url('/fonts/Gilroy-Heavy.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'Built Titling El';
     src: url('/fonts/BuiltTitlingEl.woff') format('woff');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
@@ -47,12 +53,14 @@ const GlobalStyles = createGlobalStyle`
     src: url('/fonts/BuiltTitlingRg-Regular.woff') format('woff'),
          url('/fonts/BuiltTitlingRg-Regular.woff2') format('woff2');
     font-style: normal;
+    font-display: swap;
   }
 
   @font-face {
     font-family: 'BuiltTitlingRg Bold';
     src: url('/fonts/BuiltTitlingRg-Bold.woff') format('woff');
     font-style: normal;
+    font-display: swap;
   }
 `;
 
