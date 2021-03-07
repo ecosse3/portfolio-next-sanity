@@ -3,7 +3,6 @@ import Comments from '../../components/comments';
 import ErrorPage from 'next/error';
 import Form from '../../components/form';
 import Head from 'next/head';
-import Header from '../../components/header';
 import MoreStories from '../../components/more-stories';
 import PostBody from '../../components/post-body';
 import PostHeader from '../../components/post-header';
@@ -30,7 +29,6 @@ export default function Post({ post, morePosts, preview }: IProps) {
   return (
     <Layout preview={preview}>
       <Container>
-        <Header />
         {router.isFallback ? (
           <PostTitle>Loading…</PostTitle>
         ) : (

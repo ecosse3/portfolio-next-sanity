@@ -7,7 +7,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
   <>
     <GlobalStyles />
     <ThemeProvider theme={theme}>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </ThemeProvider>
   </>
 );

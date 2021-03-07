@@ -1,13 +1,13 @@
 import React from 'react';
 import MoreStories from '../components/more-stories';
 import HeroPost from '../components/hero-post';
-import Intro from '../components/intro';
 import Layout from '../components/Layout';
 import { getAllPostsForHome } from '../lib/api';
 import Head from 'next/head';
 import { TPost } from 'types/blog';
 import { GetStaticProps } from 'next';
 import { Container } from 'react-awesome-styled-grid';
+import Intro from 'components/intro';
 
 interface IProps {
   allPosts: TPost[];
@@ -23,9 +23,9 @@ export default function Index({ allPosts, preview }: IProps) {
         <Head>
           <title>Kvsky Portfolio</title>
         </Head>
+        <Intro />
         <Container>
-          <Intro />
-          {heroPost && (
+          {/* {heroPost && (
             <HeroPost
               title={heroPost.title}
               coverImage={heroPost.coverImage}
@@ -35,7 +35,7 @@ export default function Index({ allPosts, preview }: IProps) {
               excerpt={heroPost.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morePosts.length > 0 && <MoreStories posts={morePosts} />} */}
         </Container>
       </Layout>
     </>

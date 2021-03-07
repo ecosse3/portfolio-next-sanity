@@ -1,11 +1,18 @@
 import { ITheme } from "types/theme";
 
 export const theme: ITheme = {
+  awesomegrid: {},
   colors: {
     primary: '#128DFF',
     secondary: '#00D2FF',
     title: '#121212',
     text: '#3A3A3A',
+  },
+  constants: {
+    header: {
+      desktop: 100,
+      mobile: 100,
+    }
   },
   fonts: {
     gilroy: 'Gilroy Regular',
